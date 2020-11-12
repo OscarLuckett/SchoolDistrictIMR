@@ -19,3 +19,6 @@ https://nces.ed.gov/pubsearch/pubsinfo.asp?pubid=2020103
 202 Parents of Relevant Children
 204 Parents of Relevant Children – Enrolled
 205 Parents of Relevant Children – Enrolled Public
+
+# Vox, Alvin Chang on Drawing School Districts
+https://www.vox.com/2018/1/8/16822374/school-segregation-gerrymander-map
