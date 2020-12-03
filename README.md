@@ -23,7 +23,17 @@ https://nces.ed.gov/pubsearch/pubsinfo.asp?pubid=2020103
 # Vox, Alvin Chang on Drawing School Districts
 https://www.vox.com/2018/1/8/16822374/school-segregation-gerrymander-map
 
+# Tomas E. Monarrez
+https://sites.google.com/site/tmonarrez/
+
+# Meredith Richards
+# The Gerrymandering of School Attendance Zones and the Segregation of Public Schools: A Geospatial Analysis
+https://journals.sagepub.com/doi/abs/10.3102/0002831214553652
+
+https://www.smu.edu/simmons/About-Us/Directory/Education-Policy-Leadership/Richards
+
 #School Boards and Student Segregation- Research Paper
+# (Macartney and Singleton 2017)
 https://www.nber.org/papers/w23619
 
 #Brian Olson Redistricting Algorithm
