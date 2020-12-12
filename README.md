@@ -59,3 +59,6 @@ https://bdistricting.com/2010/
 
 #FTE Redistriting Tool
 https://projects.fivethirtyeight.com/redistricting-maps/new-york/#GOP
+
+#NYC District Methodology
+https://www.6sqft.com/stuff-you-should-know-understanding-how-nycs-school-zones-and-districts-work/
