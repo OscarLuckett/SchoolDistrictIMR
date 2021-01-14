@@ -4,7 +4,11 @@ install.packages("tmaptools")
 install.packages("RCurl")
 install.packages("jsonlite")
 install.packages("tidyverse")
+install.packages("mapproj")
 install.packages("leaflet")
+install.packages("ggplot2")
+install.packages("ggvoronoi")
+install.packages("Rccp")
 # load packages
 library(ggmap)
 library(tmaptools)
@@ -12,9 +16,11 @@ library(RCurl)
 library(jsonlite)
 library(tidyverse)
 library(leaflet)
+library(mapproj)
+library(ggplot2)
 
 # replace "api_key" with your API key
-register_google(key = SD_API_KEY)
+register_google(key = Sys.getenv("R_API_KEY"))
 
 
 # create a list of London pubs
@@ -66,13 +72,17 @@ pubs_tmaptools
 
 ###### maps
 
-library(ggmap)
 
-oxford_map <- get_googlemap(center = c(-84.7398373,39.507306),zoom=15, key=SD_API_KEY)
+
+library(ggmap)
+oxford_map <- get_googlemap(center = c(-84.7398373,39.507306),zoom=15, 
+                            key=Sys.getenv("R_API_KEY"))
+
 
 bounds <- as.numeric(attr(oxford_map,"bb"))
 
 library(ggvoronoi)
+
 map <-
   ggmap(oxford_map,base_layer = ggplot(data=oxford_bikes,aes(x,y))) +
   xlim(-85,-84)+ylim(39,40)+
@@ -81,7 +91,9 @@ map <-
   theme(axis.text=element_blank(),
         axis.title=element_blank())
 
+
 library(mapproj)
 
 map + geom_path(stat="voronoi",alpha=.085,size=.25) +
   geom_point(color="blue",size=.25)
+
