@@ -14,7 +14,7 @@ library(tidyverse)
 library(leaflet)
 
 # replace "api_key" with your API key
-register_google(key = SD_API_KEY)
+register_google(key = Sys.getenv("R_API_KEY"))
 
 
 # create a list of London pubs
@@ -68,7 +68,8 @@ pubs_tmaptools
 
 library(ggmap)
 
-oxford_map <- get_googlemap(center = c(-84.7398373,39.507306),zoom=15, key=SD_API_KEY)
+oxford_map <- get_googlemap(center = c(-84.7398373,39.507306),zoom=18, 
+                            key=Sys.getenv("R_API_KEY"))
 
 bounds <- as.numeric(attr(oxford_map,"bb"))
 
