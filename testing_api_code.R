@@ -78,11 +78,9 @@ library(ggmap)
 oxford_map <- get_googlemap(center = c(-84.7398373,39.507306),zoom=15, 
                             key=Sys.getenv("R_API_KEY"))
 
-<<<<<<< HEAD
+
 oxford_map <- get_googlemap(center = c(-84.7398373,39.507306),zoom=18, 
                             key=Sys.getenv("R_API_KEY"))
-=======
->>>>>>> f9791a7ee88264c3301e84ae82c799b712ba32e6
 
 bounds <- as.numeric(attr(oxford_map,"bb"))
 
