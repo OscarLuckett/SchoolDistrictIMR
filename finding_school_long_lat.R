@@ -32,7 +32,7 @@ bounds <- as.numeric(attr(brooklyn_map,"bb"))
 
 library(ggvoronoi)
 
-save(schools_ggmap, file="schools_ggmap.RData")
+#save(schools_ggmap, file="schools_ggmap.RData")
 load("schools_ggmap.RData")
 
 schools_ggmap <- schools_ggmap %>% mutate(x=lon, y=lat) 
