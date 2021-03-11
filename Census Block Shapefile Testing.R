@@ -24,3 +24,14 @@ census_block_centers = st_coordinates(tx_ll) %>% as.data.frame() %>%
 
 census_block_info <- data.frame(tx_ll) %>% dplyr::select(BoroCode, BoroName, CB2010, CT2010, BCTCB2010, Shape_Area) 
 census_blocks <- cbind(census_block_centers, census_block_info)
+
+#https://gis.stackexchange.com/questions/9380/where-to-get-2010-census-block-data
+
+#http://www2.census.gov/geo/tiger/TIGER2010BLKPOPHU/
+#NY is state fp10 = 36
+
+#https://www.kaggle.com/muonneutrino/new-york-city-census-data
+
+block_level_demographics <- 
+  read.dbf("data/NYCblocks10_PL2k_2010_plurality_change_CUNYCenterforUrbanResearch.dbf")
+# take from here: https://www.urbanresearchmaps.org/plurality/blockmaps.htm
