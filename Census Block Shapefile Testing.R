@@ -1,7 +1,11 @@
+install.packages("foreign")
+
 library(sf)
 library(dplyr)
+library(foreign)
 
 nycb.tx <- "data/nycb2010.shp"  
+
 
 # I don't think we're using these lines:
 #shp <- readOGR(dsn=nycb.tx, stringsAsFactor = F)
