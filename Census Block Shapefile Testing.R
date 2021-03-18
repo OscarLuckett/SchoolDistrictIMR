@@ -10,7 +10,7 @@ nycb_wo_dems.tx <- "data/nycb2010.shp"
 #coords <- coordinates(shp)
 
 
-tx <- st_read(nycb.tx, stringsAsFactors=FALSE)
+tx <- st_read(nycb_wo_dems.tx, stringsAsFactors=FALSE)
 ## Reading layer `Texas_VTD' from data source `/Users/bob/Downloads/Texas_Shapefile/Texas_VTD.shp' using driver `ESRI Shapefile'
 ## Simple feature collection with 8400 features and 21 fields
 ## geometry type:  POLYGON
@@ -40,7 +40,7 @@ block_level_demographics <-
 
 nycb.tx <- "data/NYCblocks10_PL2k_2010_plurality_change_CUNYCenterforUrbanResearch.shp"  
 
-tx <- st_read(nycb.tx, stringsAsFactors=FALSE)
+tx <- sf::st_read(nycb.tx, stringsAsFactors=FALSE)
 tx_ll <- st_transform(tx, "+proj=longlat +ellps=WGS84 +datum=WGS84")
 
 census_block_centers = st_coordinates(tx_ll) %>% as.data.frame() %>% 
