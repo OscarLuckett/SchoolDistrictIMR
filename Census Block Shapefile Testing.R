@@ -2,7 +2,7 @@ library(sf)
 library(dplyr)
 library(foreign)
 
-nycb.tx <- "data/nycb2010.shp"  
+nycb_wo_dems.tx <- "data/nycb2010.shp"  
 
 
 # I don't think we're using these lines:
@@ -37,3 +37,14 @@ census_blocks <- cbind(census_block_centers, census_block_info)
 block_level_demographics <- 
   read.dbf("data/NYCblocks10_PL2k_2010_plurality_change_CUNYCenterforUrbanResearch.dbf")
 # take from here: https://www.urbanresearchmaps.org/plurality/blockmaps.htm
+
+nycb.tx <- "data/NYCblocks10_PL2k_2010_plurality_change_CUNYCenterforUrbanResearch.shp"  
+
+tx <- st_read(nycb.tx, stringsAsFactors=FALSE)
+tx_ll <- st_transform(tx, "+proj=longlat +ellps=WGS84 +datum=WGS84")
+
+census_block_centers = st_coordinates(tx_ll) %>% as.data.frame() %>% 
+  group_by(L3) %>% summarize(x = (min(X)+max(X))/2, y=(min(Y)+max(Y))/2)
+
+census_block_info <- data.frame(tx_ll) %>% dplyr::select(BoroCode, BoroName, CB2010, CT2010, BCTCB2010, Shape_Area) 
+census_blocks <- cbind(census_block_centers, census_block_info)
