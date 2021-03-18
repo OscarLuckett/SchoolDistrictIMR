@@ -1,5 +1,3 @@
-install.packages("foreign")
-
 library(sf)
 library(dplyr)
 library(foreign)
