@@ -62,3 +62,10 @@ https://projects.fivethirtyeight.com/redistricting-maps/new-york/#GOP
 
 #NYC District Methodology
 https://www.6sqft.com/stuff-you-should-know-understanding-how-nycs-school-zones-and-districts-work/
+
+To Do Today (3/25/21):
+Filter hs and ms
+Find data on current school demographics
+plot census block to school
+Match existing shp file to current demographic file
+
