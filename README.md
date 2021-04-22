@@ -62,3 +62,10 @@ https://projects.fivethirtyeight.com/redistricting-maps/new-york/#GOP
 
 #NYC District Methodology
 https://www.6sqft.com/stuff-you-should-know-understanding-how-nycs-school-zones-and-districts-work/
+
+# DP05 (we want est columns)
+## 33 - Total Pop
+## 34 - One Race
+## 35 - Two or More Races
+## 37 - White (one race)
+## 38 - Black (one race)
