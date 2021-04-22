@@ -35,6 +35,8 @@ library(ggvoronoi)
 #save(schools_ggmap, file="schools_ggmap.RData")
 load("schools_ggmap.RData")
 
+
+
 schools_ggmap %>% ggplot(aes(Low.Grade.))+geom_bar()
 
 schools_ggmap <- schools_ggmap %>% mutate(low_grade = as.numeric(as.character(Low.Grade.)))
