@@ -35,9 +35,28 @@ library(ggvoronoi)
 #save(schools_ggmap, file="schools_ggmap.RData")
 load("schools_ggmap.RData")
 
+
+
+schools_ggmap %>% ggplot(aes(Low.Grade.))+geom_bar()
+
+schools_ggmap <- schools_ggmap %>% mutate(low_grade = as.numeric(as.character(Low.Grade.)))
+schools_ggmap <- schools_ggmap %>% mutate(high_grade = as.numeric(as.character(High.Grade.)))
+
+schools_ggmap <- schools_ggmap %>% mutate(low_grade = ifelse(Low.Grade.=="PK",-1, low_grade))
+schools_ggmap <- schools_ggmap %>% mutate(low_grade = ifelse(Low.Grade.=="KG",0, low_grade))
+
+schools_ggmap <- schools_ggmap %>% mutate(high_grade = ifelse(High.Grade.=="PK",-1, high_grade))
+schools_ggmap <- schools_ggmap %>% mutate(high_grade = ifelse(High.Grade.=="KG",0, high_grade))
+
+MS_schools_ggmap = schools_ggmap %>% filter (low_grade <= 8 , high_grade>= 6)
+
+MS_schools_ggmap <- MS_schools_ggmap %>% mutate(student_pop = as.numeric(Students.))
+MS_schools_ggmap <- MS_schools_ggmap %>% mutate(student_p_grade = student_pop / (high_grade - low_grade + 1))
+
+view(MS_schools_ggmap)
+
 schools_ggmap <- schools_ggmap %>% mutate(x=lon, y=lat) 
 schools_ggmap <- schools_ggmap %>% dplyr::select(-lat, -lon)
-
 
 school_locations <- schools_ggmap %>% dplyr::select(x,y) %>% unique()
 
